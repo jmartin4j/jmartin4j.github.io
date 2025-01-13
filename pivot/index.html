@@ -4,56 +4,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <title>Benvinguts</title>
-    <style>body {
-    padding: 0; /* Elimina l'espai extra al voltant del cos */
-}
+    <title>Animació d'imatge</title>
+    <style>
+        body {
+            background-color: #111; /* Fons fosc per contrastar amb elements clars */
+            color: white;
+            font-family: 'Arial', sans-serif;
+            padding: 0;
+            margin: 0;
+            transition: background-color 0.3s ease;
+        }
 
-.container-fluid {
-    max-width: 100%; /* Assegura que la navbar ocupa tota l'amplada */
-}
+        .navbar {
+            background-color: #222;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    
-    .navbar {
-    padding-left: 0; /* Elimina el padding esquerra de la navbar */
-}
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: #e2e2e2;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
 
-.logo {
-    margin-right: 20px; /* Ajustar el marge si vols separar el logo del text */
-    margin-left: 0; /* Assegurar que no hi hagi marge a l'esquerra */
-}
+        .navbar-brand span {
+            margin-left: 5px; /* Afegim un marge per separar el text del logo */
+        }
 
-    
+        .navbar-toggler {
+            border: none;
+            color: #e2e2e2;
+            background: none;
+            transition: color 0.3s ease;
+        }
 
-.navbar-brand {
-    display: flex;
-    align-items: center;
-}
+        .navbar-toggler:hover {
+            color: #12d1f3;
+        }
 
+        .navbar-nav .nav-link {
+            color: #ccc;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
 
-}
+        .navbar-nav .nav-link:hover {
+            color: #12d1f3;
+        }
 
-.brand-text {
-    white-space: nowrap; /* Això assegura que el text no es trenqui en múltiples línies */
-    font-size: 1.25rem; /* Ajusta la mida de la font si és necessari */
-}  
-.content-container {
-            margin-left: 10px;
-            margin-right: 10px; /* Marges laterals ajustats */
-            margin-top: 20px; /* Afegeix espai superior entre el contingut i la barra de menú */
+        .dropdown-menu {
+            background-color: #333;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .dropdown-item {
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            color: #12d1f3;
+            background-color: #444;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 2rem;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .content-container h1 {
+            text-align: center;
+            color: #12d1f3d5;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .content-container p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #e2e2e2;
+            transition: color 0.3s ease;
+        }
+
+        .content-container ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content-container ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid #12d1f3;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        /*.content-container ul li:hover {
+            transform: translateX(10px);
+            border-color: #12d1f3;
+        }*/
+
+        /* Animacions per la barra de navegació */
+        .navbar {
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Efecte animat al botó de navegació */
+        .navbar-toggler {
+            transition: transform 0.3s ease;
+        }
+
+        /* Efecte animat en passar per sobre dels elements de la barra de navegació */
+        .navbar-nav .nav-item:hover {
+            color: #12d1f3;
+            transform: scale(1.05);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        /* Animació per l'element del dropdown */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 2rem;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .content-container h1 {
+            text-align: center;
+            color: #12d1f3;
+            font-size: 2.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-container h2 {
+            color: #12d1f3;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .content-container ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content-container ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .content-container ul li label {
+            margin-left: 0.5rem;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        .content-container ul li label.completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .content-container ol {
+            color: #e2e2e2;
+            line-height: 1.8;
+            padding-left: 1.5rem;
+        }
+
+        .content-container ol li {
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 3px solid #12d1f3;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .content-container ol li:hover {
+            transform: translateX(10px);
+            border-color: #12d1f3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #222;
+            color: #ccc;
+            margin-top: 2rem;
+            border-top: 1px solid #444;
         }
     </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-       <a class="navbar-brand d-flex align-items-center" href="#">
-    <img src="https://cvazquez04.github.io/logo.png" alt="Logo" width="50" class="logo">
-    <span class="brand-text">Web de pivot</span>
-</a>
-
+        <a class="navbar-brand" href="https://mmorera4.github.io">
+            <img src="../logo.png" alt="Logo" width="50">
+            Animació
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -61,22 +224,26 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Inici</a>
+                    <a class="nav-link" href="https://mmorera4.github.io">Inici</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tema 1</a>
+                    <a class="nav-link" href="https://mmorera4.github.io/video/">My Coldplay Video</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://mmorera4.github.io/explanation">Explanation</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Projectes</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="https://cvazquez04.github.io/aliment">Ecològic</a>
-                        <a class="dropdown-item" href="https://cvazquez04.github.io/coldplay">Coldplay</a>
-                        <a class="dropdown-item" href="https://cvazquez04.github.io/moonmusic">Moonmusic</a>
-                    </div>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">Projectes P5js</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="https://mmorera4.github.io/cara">Cara Interactiva</a></li>
+                        <li><a class="dropdown-item" href="https://mmorera4.github.io/coldplay/moonmusic">Coldplay Moonmusic</a></li>
+                        <li><a class="dropdown-item" href="https://mmorera4.github.io/coldplay/monmusicsvg">Coldplay Moonmusic SVG</a></li>
+                        <li><a class="dropdown-item" href="https://mmorera4.github.io/ocells">Ocells Interactius</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tema 2</a>
+                    <a class="nav-link" href="https://mmorera4.github.io/pivot">Animació</a>
                 </li>
             </ul>
         </div>
@@ -85,55 +252,69 @@
 
 <!-- Contingut principal -->
 <div class="content-container">
-    <h1>Passos per fer una figura animada</h1>
-    <ol>
-        <li>PASSOS EN GIMP</li>
-        <li>Descarregar Gimp per exemple desde el Company Portal i descarregar el pivot animator</li>
-        <li>L'objectiu de Gimp es retallar les parts del nostre cantant (cap, braços, cames...)
-        per despres animarlos amb Gimp</li>
-        <li>Busquem una imatge del nostre cantant preferit i li retallem les parts del cos</li>
-        <li>Obrim l'imatge amb Fitxer>Obre.</li>
-        <li>Ampliem amb control + per poder marcar bé.</li>
-        <li>Cliquem al menú Capes>Transparència>Afegeix canal alfa.</li>
-        <li>Clica sobre les eines sobre el llaç que fa una selecció lliure fent clics al voltant de la part del cos que
-        ens interesa fins una mica més gran perque no quedi buit quan es mou. Fent doble click quan donem tota la volta 
-        i arribem al principi.</li>
-        <li>Cliquem al menú Imatge i dins a "Escapça a la selecció" i aixó crea un troç o una part del cos retallada.</li>
-        <li>Clicar Selecciona i Inverteix dintre de Selecciona.</li>
-        <li>Clica Edita i dintre Retalla.</li>
-        <li>Cliquem al llaç per seleccionar les areas que volem borrar dintre de la nostre part del cos.</li>
-        <li>Cliquem Edita i dintre Retalla.</li>
-        <li>Cliquem a Selecciona i dintre Cap i ara tenim la part del cos completa i buida si cal.</li>
-        <li>Cliquem Borrador i posem mida 20.</li>
-        <li>Cliquem Selecciona i dintre Cap i difuminem el coll o la zona d'unió de parts.</li>
-        <li>Per acabar Fitxer i Anomena i Exporta com a png.</li>
-        <li>Repeteix tot el procés anterior per totes les parts del cos.</li>
-        <li>PASSOS EN PIVOT</li>
-        <li>Cliquem a Fichero >Cargar Sprite i carreguem totes les parts del cos.</li>
-        <li>Cada imatge et surten uns punts en cada cantonada de la part inferior i els mous els punts on estaríen les
-        articulacions i cliquem a símbol de dos boles vermelles amb una línia al mig.</li>
-        <li>És important que la nova articulació creada estigui a sobre de l'anterior articulació on es conecta les
-        dos parts del cos i això amb totes les articulacions.</li>
-        <li>Es important moure primer el punt groc, que es l'articulació i unir punts grocs entre si per conectar parts.</li>
-        <li>Si volem duplicar una part del cos es pot clicar a Majúscules i al símbol de les dos boletes vermelles amb
-        una ratlla duplicat.</li>
-        <li>Per moure el coll i que no quedi espai buit l'has de donar a les dos boletes vermelles amb la ratlla al mig
-        i clicar al triangle cap abaix per fer la línia més fina.</li>
-        <li>A continuació li donem a l'opció de l'hexagon i triem un triangle de la zona buida.</li>
-        <li>Guardar com STK que es una figura articulada de pivot animator.</li>
-        <li>Obrir STK amb pivot animator, carregar un fons i animar.</li>
-        <li>Exportar en format Gif (animació amb 128 colors) o video format WMV.</li>
-        <li>Editar el video per afegir subtítols o audio. </li>
-        <li>També podem provar un <a href="https://pompeu.neocities.org/pivot"> pivot animator del professor</a>.</li>
-    </ol>
-    <p>Mira aquest video en cas de dubte.</p>
-    <iframe width="853" height="480" src="https://www.youtube.com/embed/ttNdG46Tvwo" title="Build Multi-Sprite Figures in Pivot Animator 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <h1>PASSOS PER FER UNA FIGURA ANIMADA</h1>
+    <ul>
+        <h2>PASSOS EN GIMP</h2>
+        <li>    </li>
+        <li><input type="checkbox" id="item2"><label for="item2">Descarregar Gimp per exemple desde el Company Portal i descarregar el pivot animator</label></li>
+        <li>L'objectiu de Gimp es retallar les parts del nostre cantant (cap, braços, cames...) per despres animarlos amb Gimp</label></li>
+        <li><input type="checkbox" id="item4"><label for="item4">Busquem una imatge del nostre cantant preferit i li retallem les parts del cos</label></li>
+        <li><input type="checkbox" id="item5"><label for="item5">Obrim l'imatge amb Fitxer>Obre.</label></li>
+        <li><input type="checkbox" id="item6"><label for="item6">Cliquem al menú Capes>Transparència>Afegeix canal alfa.</label></li>
+        <li><input type="checkbox" id="item7"><label for="item7">Clica sobre les eines sobre el llaç que fa una selecció lliure fent clics al voltant de la part del cos que ens interesa fins una mica més gran perque no quedi buit quan es mou. Fent doble click quan donem tota la volta  i arribem al principi.</label></li>
+        <li><input type="checkbox" id="item8"><label for="item8">Cliquem al menú Imatge i dins a "Escapça a la selecció" i aixó crea un troç o una part del cos retallada.</label></li>
+        <li><input type="checkbox" id="item9"><label for="item9">Clicar Selecciona i Inverteix dintre de Selecciona.</label></li>
+        <li><input type="checkbox" id="item10"><label for="item10">Clica Edita i dintre Retalla.</label></li>
+        <li><input type="checkbox" id="item11"><label for="item11">Cliquem al llaç per seleccionar les areas que volem borrar dintre de la nostre part del cos.</label></li>
+        <li><input type="checkbox" id="item12"><label for="item12">Cliquem Edita i dintre Retalla.</label></li>
+        <li><input type="checkbox" id="item13"><label for="item13">Cliquem a Selecciona i dintre Cap i ara tenim la part del cos completa i buida si cal.</label></li>
+        <li><input type="checkbox" id="item14"><label for="item14">Cliquem Borrador i posem mida 20.</label></li>
+        <li><input type="checkbox" id="item15"><label for="item15">Cliquem Selecciona i dintre Cap i difuminem el coll o la zona d'unió de parts.</label></li>
+        <li><input type="checkbox" id="item16"><label for="item16">Per acabar Fitxer i Anomena i Exporta com a png.</label></li>
+        <li>Repeteix tot el procés anterior per totes les parts del cos.</label></li>
+        <li>    </li>
+        <li>    </li>
+        <li>    </li>
+        <li>    </li>
+        <li>    </li>
+        <li>    </li>
+        <h2>PASSOS EN PIVOT</h2>
+        <li>    </li>
+        <li><input type="checkbox" id="item19"><label for="item19">Cliquem a Fichero >Cargar Sprite i carreguem totes les parts del cos.</label></li>
+        <li>Cada imatge et surten uns punts en cada cantonada de la part inferior i els mous els punts on estaríen les articulacions i cliquem a símbol de dos boles vermelles amb una línia al mig.</li>
+        <li>És important que la nova articulació creada estigui a sobre de l'anterior articulació on es conecta les dos parts del cos i això amb totes les articulacions.</li>
+        <li>Es important moure primer el punt groc, que es l'articulació i unir punts grocs entre si per conectar parts.</label></li>
+        <li>Si volem duplicar una part del cos es pot clicar a Majúscules i al símbol de les dos boletes vermelles amb una ratlla duplicat.</label></li>
+        <li>Per moure el coll i que no quedi espai buit l'has de donar a les dos boletes vermelles amb la ratlla al mig i clicar al triangle cap abaix per fer la línia més fina.</label></li>
+        <li><input type="checkbox" id="item20"><label for="item20">A continuació li donem a l'opció de l'hexagon i triem un triangle de la zona buida.</label></li>
+        <li><input type="checkbox" id="item21"><label for="item21">Guardar com STK que es una figura articulada de pivot animator.</label></li>
+        <li><input type="checkbox" id="item22"><label for="item22">Obrir STK amb pivot animator, carregar un fons i animar.</label></li>
+        <li><input type="checkbox" id="item23"><label for="item22">Exportar en format Gif (animació amb 128 colors) o video format WMV.</label></li>
+        <li><input type="checkbox" id="item24"><label for="item24">Editar el video per afegir subtítols o audio.</label></li>
+        <li><input type="checkbox" id="item25"><label for="item25">També podem provar un <a href="https://pompeu.neocities.org/pivot"> pivot animator del professor</a>.</label></li>
+    </ul>
+    
+<p>Mira aquest video en cas de dubte.</p>
+    <iframe width="750" height="422" src="https://www.youtube.com/embed/ttNdG46Tvwo" title="Build Multi-Sprite Figures in Pivot Animator 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 </div>
-
+    
 <!-- Scripts necessaris -->
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', (event) => {
+                const label = event.target.nextElementSibling;
+                if (event.target.checked) {
+                    label.classList.add('completed');
+                } else {
+                    label.classList.remove('completed');
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
